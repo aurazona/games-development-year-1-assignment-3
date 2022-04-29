@@ -1,0 +1,21 @@
+TODO:
+
+Fix numberpad being fat-fingered
+
+Implement fingerprint scanner logic
+
+Implement time and score
+
+Implement Music
+
+Implement title screen
+
+Implement Game Over screen
+
+Implement animations for phone enter/exit, code note enter/exit
+
+Implement countdown for game start
+
+MAYBES:
+
+mobile support?
