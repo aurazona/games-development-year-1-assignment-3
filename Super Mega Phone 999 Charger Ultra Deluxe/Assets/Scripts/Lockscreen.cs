@@ -77,7 +77,7 @@ public class Lockscreen : MonoBehaviour
 
     void passcodeCheck()
     {
-        if (currentPass.Length == 4) //if the passcode's maxed out
+        if (currentPass.Length >= 4) //if the passcode's maxed out
         {
             if (currentPass == Passcode.ToString()) //if the entered code is equal to the actual passcode
             {

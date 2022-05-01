@@ -19,3 +19,8 @@ Implement countdown for game start
 MAYBES:
 
 mobile support?
+
+Input handling:
+
+on new phone spawn, grab all buttons using the tag phoneButton and slam em into an array.
+on raycast hit, check to see if the object is part of the button array. if it is, grab the buttonNumber and slam it into the entered code, else do nothing.

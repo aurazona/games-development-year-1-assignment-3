@@ -22,9 +22,16 @@ public class numpadButton : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit))
             {
-                Debug.Log(buttonNumber);
-                //commented out for now, but below is the logic for actually adding numbers to the passcode
-                //Lockscreen.currentPass = Lockscreen.currentPass + buttonNumber.ToString();
+                Debug.Log($"Raycast hit {hit.transform.name}");
+                if(hit.transform.name == buttonNumber.ToString())
+                {
+                    Debug.Log(buttonNumber);
+                    Lockscreen.currentPass = Lockscreen.currentPass + buttonNumber.ToString();
+                }
+                else
+                {
+                    Debug.LogError($"Didn't pick up a button! What it actually hit: {hit.transform.name}");
+                }
             }
         }
     }
