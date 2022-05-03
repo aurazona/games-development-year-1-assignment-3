@@ -82,13 +82,35 @@ public class Lockscreen : MonoBehaviour
             if (currentPass == Passcode.ToString()) //if the entered code is equal to the actual passcode
             {
                 //play a sound or something to indicate the lockscreen has been unlocked
+                enteredCodeText.txt.color = Color.green;              
                 Destroy(self);
+                Debug.Log("Correct code! Invoking clearLockscreen().");
+                Invoke("clearLockscreen", 1);
             }
             else
             {
                 Debug.Log($"Wrong code! Entered code: {currentPass}");
-                currentPass = "";
+                inputHandler.inputsAllowed = false;
+                enteredCodeText.txt.color = Color.red;
+                Debug.Log("Disabling input.");
+                Invoke("reenableInputs", 1);               
             }
         }
+    }
+
+    void reenableInputs()
+    {
+        inputHandler.inputsAllowed = true;
+        Debug.Log("Inputs reenabled!");
+        currentPass = "";
+        enteredCodeText.txt.color = Color.black;
+    }
+
+    void clearLockscreen()
+    {
+        currentPass = "";
+        Debug.Log("currentPass cleared!");
+        enteredCodeText.txt.color = Color.black;
+        Debug.Log("Reset enteredCodeText colour!");
     }
 }

@@ -7,10 +7,11 @@ public class codeNote : MonoBehaviour
 {
 
     public Text txt; //controls what is shown on the code note
+    
     // Start is called before the first frame update
     void Start()
     {
-        
+        txt.color = Color.black;
     }
 
     // Update is called once per frame

@@ -5,6 +5,7 @@ using UnityEngine;
 public class inputHandler : MonoBehaviour
 {
     Camera cam;
+    public static bool inputsAllowed = true; //used to disable interaction for stuff like entering a wrong code
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +15,7 @@ public class inputHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && inputsAllowed == true)
         { // if left button pressed...
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
